@@ -30,3 +30,24 @@
   position: relative;
   max-width: 250px;
 }
+
+.container {
+  background-color: antiquewhite;
+  width: 90%;
+  border-radius: 3px;
+  border-color: brown;
+}
+
+.bottom-border {
+
+  color: black;
+  border-bottom: 10px solid;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+i {
+  width: 500px;
+  height: 500px;
+}
