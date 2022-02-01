@@ -26,6 +26,8 @@
   color: red;
 }
 
+
+
 .header-avatar {
   position: relative;
   max-width: 250px;
@@ -45,6 +47,16 @@
   margin-left: 1em;
   margin-bottom: 1em;
   margin-right: 1em;
+}
+
+#tweet-text {
+  width: 100%;
+  border: hidden;
+  background-color: antiquewhite;
+}
+
+.counter {
+  color: blue;
 }
 
 i {

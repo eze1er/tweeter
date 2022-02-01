@@ -1,0 +1,30 @@
+.container {
+  background-color: antiquewhite;
+  width: 90%;
+}
+
+.new-tweet-text {
+  display: flex;
+  justify-content: first baseline;
+  font-size: 42px;
+}
+
+.bottom-border {
+  border-bottom: 5px solid black;
+}
+
+.tweet-submit {
+  background-color: blue;
+  color: white;
+  font-weight: bolder;
+}
+
+.counter {
+  color: blue;
+}
+.tweet-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 45px;  
+  font-weight: bolder;
+}
