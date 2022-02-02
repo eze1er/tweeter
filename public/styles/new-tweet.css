@@ -7,6 +7,7 @@
   display: flex;
   justify-content: first baseline;
   font-size: 42px;
+  width: 100%;
 }
 
 .bottom-border {
@@ -28,3 +29,4 @@
   font-size: 45px;  
   font-weight: bolder;
 }
+

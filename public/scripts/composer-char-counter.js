@@ -3,11 +3,11 @@ $(document).ready(function() {
   console.log("the composer is loaded");
   $('#tweet-text').keyup(function(i) {
     let tweetLength= i.target.value.length;
-    $('.counter').tex(140 - tweetLength);
+    $('.tweet-counter').text(140 - tweetLength);
     if (tweetLength > 140) {
-      $('.counter').css('color', 'red');
+      $('.tweet-counter').css('color', 'red');
     } else {
-      $('.counter').css('color', 'black');
+      $('.tweet-counter').css('color', 'black');
     }
   })
 });

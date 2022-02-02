@@ -1,0 +1,144 @@
+/* body {
+  /* width: 90%; */
+  /* height: 90%; */
+  /* background-color: antiquewhite;
+  border: solid;
+  border-color: blue; */
+  /* color: black; */
+  /* color: #FFFFFF; */
+  /* font-family: 'Bungee'; */
+  /* font-size: 22px; */
+/* } */ 
+
+ .new-tweet h2 {
+   margin-left: 1em;
+   color: black;
+ }
+
+.tweet-text {
+  /* border: hidden; */
+  background-color: antiquewhite;
+  margin-left: 1em;
+  width: 100%;
+  height: 80px;
+  font-size: 22px;
+  padding: 15px;
+  overflow: auto;
+}
+
+.tweet-base {
+  border-bottom: 5px solid black;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+.tweet-submit, .tweet-counter {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-weight: bolder;
+  font-size: 45px;
+}
+
+.tweet-submit {
+  background-color: blue;
+}
+
+.tweet {
+  display: flex;
+  justify-content: space-between;
+  font-size: 45px;  
+  font-weight: bolder;
+  width: 100%;
+}
+
+.tweet-submit {
+  margin-left: 0.5em;
+  margin-bottom: 1em;
+}
+
+.tweet-counter {
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+}
+.tweetId {
+  display: flex;
+  justify-content: space-between;
+  font-size: 45px;  
+  font-weight: bolder;
+}
+
+
+#tweet-container {
+  /* width: 90%; */
+  height: 260px;
+  border: solid;
+  border-color: black;
+  box-shadow: 3px;
+  background-color: antiquewhite;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+
+#tweet-container:hover {
+  box-shadow: 10px 10px 1px 2px rgba(0, 0, 255, .2);
+}
+
+.container-img {
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+}
+
+.container-email {
+  opacity: 0.5;
+}
+
+.old-text p {
+  width: 95%;
+  height: 100px;
+  margin-left: 20px;
+  margin-right: 10px;
+  text-align: justify;
+}
+
+
+.tweet-foot {
+  border-bottom: 5px solid black;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+
+.tweet-edit {
+  display: flex;
+  flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: flex-start;
+  border: hidden;
+  color: blue;
+  background-image: none;
+}
+
+.submit:hover {
+  color: orange;
+}
+
+.tweet-footer{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: flex-start;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 3px;
+
+}
+

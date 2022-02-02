@@ -5,21 +5,21 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/art.tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -27,6 +27,7 @@
   </head>
 
   <body>
+
     <!-- Top nav bar (fixed) -->
     <nav class="navbar-top">
       <span class="navbar-logo">TWEETER</span>
@@ -35,29 +36,61 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
+
+    <!-- header with image  -->
     <header class="header">
       <div class="header-avatar">
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
-      <div class="header-name">
-          <h2>Ezechiel Iti.</h2>
+      <div class="header-username">
+          <p><b>Ezechiel</b> Iti</p>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-        <section class="new-tweet">
-          <h2>What are you humming about?</h2>
-          <form action="/" method="POST">
-            <textarea class="tweet-text" name="text" placeholder="type your tweet here."></textarea>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="GET">
+          <label class="new-tweet-text" for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="bottom-border"></div>
+            <footer class="tweet-foot">
+              <input type="submit" value="Tweet" class="tweet-submit"    action="/"></input>
+              <output
+               name="counter" class="tweet-counter" for="tweet-text"></output>
+            </footer>
+        </form>
+      </section>
+      <article id="tweet-container">
+        <div class="tweetId">
+          <div>
+            <tr>
+              <i>&hearts;</i>
+            </tr>
+            <a class="container-name">Roda Jacob</a>
+          </div>
+          <div>
+            <a class="container-email">@MrsJacob</a>
+          </div>
+        </div>
 
-              <button type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
-          </form>
-        </section>
+        <div class="old-text">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum illum, eveniet dolore exercitationem explicabo nisi tempore id non error recusandae obcaecati quia natus, doloribus commodi omnis ducimus deleniti officiis modi?</p>
+        </div>
+
+        <div class="tweet-footer">
+          <div><p>10 days ago</p></div>
+          <div class="tweet-edit">
+            <i type="submit" class="submit far fa-flag"></i>
+            <i type="submit" class="submit fas fa-retweet"></i>
+            <i type="submit" class="submit far fa-heart"></i>
+            <!-- <input type="submit" value="&hearts;"> -->
+          </div>
+        </div>
+
+        </article>
     </main>
-    
   </body>
 </html>

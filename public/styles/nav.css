@@ -10,8 +10,9 @@
   padding-right: 1.5em;
   position: fixed;
 }
+
 .navbar-logo {
-  font-family: 'Bungee', sans-serif;
+  font-family: 'Bungee';
   font-size: 36px;
 }
 
@@ -22,44 +23,12 @@
   align-items: center;
 }
 
-.navbar-menu i {
-  color: red;
-}
-
-
-
-.header-avatar {
-  position: relative;
-  max-width: 250px;
-}
-
-.container {
-  background-color: antiquewhite;
-  width: 90%;
-  border-radius: 3px;
-  border-color: brown;
-}
-
-.bottom-border {
-
-  color: black;
-  border-bottom: 10px solid;
-  margin-left: 1em;
-  margin-bottom: 1em;
-  margin-right: 1em;
-}
-
 #tweet-text {
   width: 100%;
   border: hidden;
   background-color: antiquewhite;
 }
 
-.counter {
-  color: blue;
-}
-
-i {
-  width: 500px;
-  height: 500px;
+.navbar-menu i {
+  color: red;
 }
