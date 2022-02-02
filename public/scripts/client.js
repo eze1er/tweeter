@@ -3,66 +3,76 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+];
 
-// A $( document ).ready() block.
-$( document ).ready(function() {  
-  console.log( "ready!" );
 
+const renderTweets = function(data){
+  data.forEach(element => {
+    // createTweetElement(element);
+    const $tweet = createTweetElement(element);
+    $('#tweets-container').append($tweet); // to add it to the page so we can make sure
+  });
+  
+}
 
 
 const createTweetElement = function(tweetData) {
-  const timeAgo = timeago.format(tweetData.created_at); 
-  const article = `<article id="tweet-container">
-<div class="tweetId">
-  <div>
-    <tr>
-      <img class="human-picture" style="-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="${tweetData.user.avatars}">
-    </tr>
-    <a class="container-name">xxx${tweetData.user.name}</a>
-  </div>
-  <div>
-    <a class="container-email">${tweetData.user.handle}</a>
-  </div>
-</div>
-
-<div class="old-text">
-  <p>${tweetData.content.text}</p>
-</div>
-
-<div class="tweet-footer">
-  <div><p>${timeAgo}</p></div>
-  <div class="tweet-edit">
-    <i type="submit" class="submit far fa-flag"></i>
-    <i type="submit" class="submit fas fa-retweet"></i>
-    <i type="submit" class="submit far fa-heart"></i>
-  </div>
-</div>
-
-</article>`;
- return article;
+  const { user, content, created_at } = tweetData;
+  let singleTweetElement = $(`<article class="tweet-component">
+        <!-- image-username-refkey -->
+        <div class="image-username-refkey">
+          <div class="image-username">
+            <img src=${user.avatars} alt="" />
+            <span>${user.name}</span>
+          </div>
+          <div>${user.handle}</div>
+          </div>
+        <!-- tweet contect -->
+        <div class="tweet-content">
+          ${$("<p>")
+            .text(content.text)
+            .html()}
+        </div>
+        <!-- time and reactions icons -->
+        <div class="time-reactions">
+          <p>${timeago.format(created_at)}</p>
+          <div class="icons">
+            <i class="submit fas fa-flag"></i>
+            <i class="submit fas fa-retweet"></i>
+            <i class="submit fas fa-heart"></i>
+          </div>
+        </div>
+      </article>`);
+  return singleTweetElement;
 
 }
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
 
+// A $( document ).ready() block.
+$( document ).ready(function() {  
 
-
-// $(#tweet-container).append(article);
-// document.body.innerHTML = article;
- 
-const $tweet = createTweetElement(tweetData);
-// Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure
+  renderTweets(data);
 
 });
