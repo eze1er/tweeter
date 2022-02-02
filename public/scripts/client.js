@@ -11,7 +11,7 @@ $( document ).ready(function() {
 
 
 const createTweetElement = function(tweetData) {
-
+  const timeAgo = timeago.format(tweetData.created_at); 
   const article = `<article id="tweet-container">
 <div class="tweetId">
   <div>
@@ -30,12 +30,11 @@ const createTweetElement = function(tweetData) {
 </div>
 
 <div class="tweet-footer">
-  <div><p>10 days ago</p></div>
+  <div><p>${timeAgo}</p></div>
   <div class="tweet-edit">
     <i type="submit" class="submit far fa-flag"></i>
     <i type="submit" class="submit fas fa-retweet"></i>
     <i type="submit" class="submit far fa-heart"></i>
-    <!-- <input type="submit" value="&hearts;"> -->
   </div>
 </div>
 
