@@ -1,3 +1,5 @@
+// const { text } = require("body-parser");
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -29,14 +31,14 @@ const data = [
 ];
 
 
-const renderTweets = function(data){
+const renderTweets = function(data) {
   data.forEach(element => {
     // createTweetElement(element);
     const $tweet = createTweetElement(element);
-    $('#tweets-container').append($tweet); // to add it to the page so we can make sure
+    $('#tweets-container').prepend($tweet); // to add it to the page so we can make sure
   });
   
-}
+};
 
 
 const createTweetElement = function(tweetData) {
@@ -53,8 +55,8 @@ const createTweetElement = function(tweetData) {
         <!-- tweet contect -->
         <div class="tweet-content">
           ${$("<p>")
-            .text(content.text)
-            .html()}
+    .text(content.text)
+    .html()}
         </div>
         <!-- time and reactions icons -->
         <div class="time-reactions">
@@ -68,11 +70,76 @@ const createTweetElement = function(tweetData) {
       </article>`);
   return singleTweetElement;
 
-}
+};
+
+
+
 
 // A $( document ).ready() block.
-$( document ).ready(function() {  
+$(document).ready(function() {
+  // function to load tweet in
+  function loadTweets() {
+    $.get("/tweets").then(function(data) {
+      renderTweets(data);
+    });
+  }
 
-  renderTweets(data);
+  loadTweets();
 
+  const $form = $('#compose-tweet');
+  // always is the document ready
+  $form.on("submit", function(event) {
+    event.preventDefault();
+
+    // $(#tweet-text).empty();
+
+    const $inputText = $('#tweet-text').val();
+    if ($inputText === null || $inputText === '') {
+      alert('empty string');
+    } else if ($inputText.length > 140) {
+      alert('too long tweet, can you reduces');
+    } else {
+      
+      $.post("/tweets", $form.serialize())
+        .done(function(data) {
+          loadTweets();
+           
+        });
+    }
+  });
+
+
+
+  // post method
+
+  //  $.post('/tweets', param).then(() => {
+
+  //  })
+  // post to save
+
+  // remove items jquery.empty
+  // $(#tweet-text).empty();
+
+
+  // get text from the in put field
+  // append it to my API
+  // get the new data
+  // append the data to the website
 });
+  
+
+
+
+// ****
+
+// $(function() {
+//   const $button = $('#tweet-text');
+//   $button.on('click', function() {
+//     console.log('Button clicked, performing ajax call...');
+//     $.ajax('index.html', { method: 'GET' })
+//       .then(function(moreTweet) {
+//         console.log('Success: ', morePostsHtml);
+//         $button.replaceWith(moreTweet);
+//       });
+//   });
+// });
