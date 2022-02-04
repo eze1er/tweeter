@@ -17,15 +17,16 @@ $(document).ready(function() {
       renderTweets(data);
     });
   }
-
+  // loadTweets is call first when we start to fill the old tweets
   loadTweets();
-
+  // variable for avoid the repetition in execution of program
   const $form = $('#compose-tweet');
   // always is the document ready
   $form.on("submit", function(event) {
     event.preventDefault();
 
     // check the empty or too long tweet
+    // we used .hide and .show for deal with the error message
     const $inputText = $('#tweet-text').val();
     if ($inputText === null || $inputText === '') {
       $( "#error" ).hide();
@@ -36,7 +37,7 @@ $(document).ready(function() {
     } else {
       $( "#error1" ).hide();
       $( "#error" ).hide();
-      
+      // serialize the tweets
       $.post("/tweets", $form.serialize())
         .done(function(data) {
           loadTweets();

@@ -14,5 +14,31 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
-- Express
+- Express 4.13.4
+- Body-parser 1.15.2
+- Chance 1.0.2
+- Md5 2.1.0
+- Timeago 4.0.2
+- Nodemon 1.9.2
 - Node 5.10.x or above
+
+
+## Final Product
+
+!["Tweet in mobile"](https://github.com/eze1er/tinyapp.1/blob/main/docs/urls_index.png)
+
+!["Tweet in tablet"](https://github.com/eze1er/tinyapp.1/blob/main/docs/urls_login.png)
+
+!["Tweet in big screen"](https://github.com/eze1er/tinyapp.1/blob/main/docs/shortURL.png)
+
+
+## Getting Started
+
+- Install all dependencies (using the `npm install` command).
+- Run the development web server using the `node express_server.js` command.
+-run this command in you Command line (CLI). `npm start`
+
+ [Author: Ezechiel Itimbien](#papaezechiel@gmail.com)
+
+__Submit 02-03-2022__
+
