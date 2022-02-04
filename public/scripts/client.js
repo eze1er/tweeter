@@ -5,78 +5,12 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
-
-const renderTweets = function(data) {
-  data.forEach(element => {
-    // createTweetElement(element);
-    const $tweet = createTweetElement(element);
-    $('#tweets-container').prepend($tweet); // to add it to the page so we can make sure
-  });
-  
-};
-
-
-const createTweetElement = function(tweetData) {
-  const { user, content, created_at } = tweetData;
-  let singleTweetElement = $(`<article class="tweet-component">
-        <!-- image-username-refkey -->
-        <div class="image-username-refkey">
-          <div class="image-username">
-            <img src=${user.avatars} alt="" />
-            <span>${user.name}</span>
-          </div>
-          <div>${user.handle}</div>
-          </div>
-        <!-- tweet contect -->
-        <div class="tweet-content">
-          ${$("<p>")
-    .text(content.text)
-    .html()}
-        </div>
-        <!-- time and reactions icons -->
-        <div class="time-reactions">
-          <p>${timeago.format(created_at)}</p>
-          <div class="icons">
-            <i class="submit fas fa-flag"></i>
-            <i class="submit fas fa-retweet"></i>
-            <i class="submit fas fa-heart"></i>
-          </div>
-        </div>
-      </article>`);
-  return singleTweetElement;
-
-};
-
-
-
 
 // A $( document ).ready() block.
 $(document).ready(function() {
+  $( "#error" ).hide();
+  $( "#error1" ).hide();
+
   // function to load tweet in
   function loadTweets() {
     $.get("/tweets").then(function(data) {
@@ -91,14 +25,17 @@ $(document).ready(function() {
   $form.on("submit", function(event) {
     event.preventDefault();
 
-    // $(#tweet-text).empty();
-
+    // check the empty or too long tweet
     const $inputText = $('#tweet-text').val();
     if ($inputText === null || $inputText === '') {
-      alert('empty string');
+      $( "#error" ).hide();
+      $( "#error1" ).show();
     } else if ($inputText.length > 140) {
-      alert('too long tweet, can you reduces');
+      $( "#error1" ).hide();
+      $( "#error" ).show();
     } else {
+      $( "#error1" ).hide();
+      $( "#error" ).hide();
       
       $.post("/tweets", $form.serialize())
         .done(function(data) {
@@ -108,38 +45,5 @@ $(document).ready(function() {
     }
   });
 
-
-
-  // post method
-
-  //  $.post('/tweets', param).then(() => {
-
-  //  })
-  // post to save
-
-  // remove items jquery.empty
-  // $(#tweet-text).empty();
-
-
-  // get text from the in put field
-  // append it to my API
-  // get the new data
-  // append the data to the website
 });
-  
 
-
-
-// ****
-
-// $(function() {
-//   const $button = $('#tweet-text');
-//   $button.on('click', function() {
-//     console.log('Button clicked, performing ajax call...');
-//     $.ajax('index.html', { method: 'GET' })
-//       .then(function(moreTweet) {
-//         console.log('Success: ', morePostsHtml);
-//         $button.replaceWith(moreTweet);
-//       });
-//   });
-// });

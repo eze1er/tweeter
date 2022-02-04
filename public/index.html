@@ -23,8 +23,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
+    <script type="text/javascript" src="/scripts/helpers.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
@@ -37,36 +39,54 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-
+    
+    <div class="tweet-layout-cont" >
     <!-- header with image  -->
-    <header class="header">
-      <div class="header-avatar">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="header-username">
-          <p><b>Ezechiel</b> Iti</p>
-      </div>
-    </header>
+    <div class="header-container">
+      <header class="header">
+        <div class="header-avatar">
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div class="header-username">
+            <p><b>Ezechiel</b> Iti</p>
+        </div>
+      </header>
+    </div>
+    <div class="main-container">
+      <main class="container">
+        <section class="new-tweet">
+          <!-- <h2>Compose Tweet</h2> -->
+      
+          <div id="error">
+            <span>🛑 <b> Too long. Plz respect our arbitrary limit of 140 chars. #kthxbye</b> 🛑</span>
+          </div>
+          <div id="error1" >
+            <span class="blinking"><b>🛑 Empty string 🛑</b> </span>
+          </div>
+          <form action="/tweets" method="POST" id="compose-tweet">
+            <!-- <label class="new-tweet-text" for="tweet-text"><b>What are you humming about?</b></label> -->
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?" onfocus=this.value=''></textarea>
+            <div class="bottom-border"></div>
+              <footer class="tweet-foot">
+                <button type="submit" class="tweet-submit">Tweet</button>
+                <output
+                 name="counter" class="tweet-counter" for="tweet-text"></output>
+              </footer>
+          </form>
+        </section>
+        <div id="tweets-container"></div>
+  <!-- the tweets adding from here -->
+  
+      </main>
+  
+    </div>
+
+
+    </div>
+
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST" id="compose-tweet">
-          <label class="new-tweet-text" for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="bottom-border"></div>
-            <footer class="tweet-foot">
-              <button type="submit" class="tweet-submit">Tweet</button>
-              <output
-               name="counter" class="tweet-counter" for="tweet-text"></output>
-            </footer>
-        </form>
-      </section>
-      <div id="tweets-container"></div>
-<!-- the tweets adding from here -->
-
-    </main>
+    
   </body>
 </html>

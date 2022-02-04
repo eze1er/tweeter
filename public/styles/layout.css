@@ -20,6 +20,7 @@
  */
 
 body {
+  width: 100%;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -27,7 +28,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   background-color: #f4f1ec;
 }
