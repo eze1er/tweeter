@@ -25,11 +25,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["Tweet in mobile"](https://github.com/eze1er/tinyapp.1/blob/main/docs/urls_index.png)
+!["Tweet in mobile"](https://github.com/eze1er/tweeter/blob/main/docs/tweetmobile.png)
 
-!["Tweet in tablet"](https://github.com/eze1er/tinyapp.1/blob/main/docs/urls_login.png)
+!["Tweet in tablet"](https://github.com/eze1er/tweeter/blob/main/docs/tweetMiddle.png)
 
-!["Tweet in big screen"](https://github.com/eze1er/tinyapp.1/blob/main/docs/shortURL.png)
+!["Tweet in big screen"](https://github.com/eze1er/tweeter/blob/main/docs/tweetLarge.png)
 
 
 ## Getting Started
