@@ -1,183 +1,171 @@
 
-
- .new-tweet h2 {
-   margin-left: 1em;
-   color: black;
+.new-tweet h2 {
+  margin-left: 1em;
+  color: black;
+}
+@media screen and (max-width: 1023px) { 
+ .new-tweet {
+   margin-top: 99px;
+ 
  }
- @media screen and (max-width: 1023px) { 
-  .new-tweet {
-    margin-top: 99px;
-  
-  }
 }
 
 .tweet-text {
-  /* border: hidden; */
-  background-color: antiquewhite;
-  margin-left: 1em;
-  width: 100%;
-  height: 80px;
-  font-size: 22px;
-  padding: 15px;
-  overflow: auto;
+ /* border: hidden; */
+ background-color: antiquewhite;
+ margin-left: 1em;
+ width: 100%;
+ height: 80px;
+ font-size: 22px;
+ padding: 15px;
+ overflow: auto;
 }
 
 .tweet-base {
-  border-bottom: 5px solid black;
-  margin-left: 1em;
-  margin-bottom: 1em;
-  margin-right: 1em;
+ border-bottom: 5px solid black;
+ margin-left: 1em;
+ margin-bottom: 1em;
+ margin-right: 1em;
 }
 
 .tweet-submit, .tweet-counter {
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  font-weight: bolder;
-  font-size: 45px;
+ display: flex;
+ justify-content: space-between;
+ font-weight: bolder;
+ font-size: 45px;
+}
+
+.counter-red {
+  color: red;
+}
+.counter-black {
+  color: black;
 }
 
 .tweet-submit {
-  background-color: blue;
+ background-color: blue;
 }
 
 .tweet {
-  display: flex;
-  justify-content: space-between;
-  font-size: 45px;  
-  font-weight: bolder;
-  width: 100%;
+ display: flex;
+ justify-content: space-between;
+ font-size: 45px;  
+ font-weight: bolder;
+ width: 100%;
 }
 
 .tweet-submit {
-  margin-left: 0.5em;
-  margin-bottom: 1em;
+ margin-left: 0.5em;
+ margin-bottom: 1em;
 }
 
 .tweet-counter {
-  margin-right: 0.5em;
-  margin-bottom: 1em;
+ margin-right: 0.5em;
+ margin-bottom: 1em;
 }
 .tweetId {
-  display: flex;
-  justify-content: space-between;
-  font-size: 45px;  
-  font-weight: bolder;
+ display: flex;
+ justify-content: space-between;
+ font-size: 45px;  
+ font-weight: bolder;
 }
 
 #error, #error1 {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(211, 211, 211);
-  width: 90%;
-  border: 10px solid red;
-  padding: 20px;
-  margin: 20px;
-  position: inherit;
-  color: red;
+ display: flex;
+ justify-content: center;
+ background-color: rgb(211, 211, 211);
+ width: 90%;
+ border: 10px solid red;
+ padding: 20px;
+ margin: 20px;
+ position: inherit;
+ color: red;
 }
 
 .blinking{
-  animation:blinkingText 1.2s infinite;
+ animation:blinkingText 1.2s infinite;
 }
 @keyframes blinkingText{
-  0%{     color: orange;    }
-  49%{    color: orangered; }
-  60%{    color: transparent; }
-  99%{    color:transparent;  }
-  100%{   color: orange;    }
+ 0%{     color: orange;    }
+ 49%{    color: orangered; }
+ 60%{    color: transparent; }
+ 99%{    color:transparent;  }
+ 100%{   color: orange;    }
 }
 
 .submit:hover {
-  color: orange;
+ color: orange;
 }
 
 /* ==================================================== */
 
 .tweet-component {
 
-  padding: 0 1rem 1rem 1rem;
-  border: 2px solid #48453C;
-  margin: 2rem 1em 0 0;
-  width: 100%;
+ padding: 0 1rem 1rem 1rem;
+ border: 2px solid #48453C;
+ margin: 2rem 4em 0 0;
+ width: 100%;
 }
 
 .tweet-component:hover {
-  box-shadow: 10px 10px 1px 2px rgba(0, 0, 255, .2);
+ box-shadow: 10px 10px 1px 2px rgba(0, 0, 255, .2);
 }
 
 .image-username-refkey {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* background: rgb(144, 141, 146); */
-  margin: 2rem 0;
-  padding: 0rem 1rem;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ /* background: rgb(144, 141, 146); */
+ margin: 2rem 0;
+ padding: 0rem 1rem;
 }
 .image-username {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 .image-username img {
-  height: 4rem;
-  width: 4rem;
-  margin-right: 1rem;
+ height: 4rem;
+ width: 4rem;
+ margin-right: 1rem;
 }
 .tweet-content {
-  margin: 4rem 0 0 0;
-  padding: 0 0 1rem 0;
-  font-weight: bold;
-  border-bottom: 3px solid black;
-  word-wrap: break-word;
-  /* border-bottom-width: 100%; */
-  /* width: 90%  ; */
-  
+ margin: 4rem 0 0 0;
+ padding: 0 0 1rem 0;
+ font-weight: bold;
+ border-bottom: 3px solid black;
+ word-wrap: break-word;
+ text-overflow: ellipsis;
+ /* border-bottom-width: 100%; */
+ width: 100%  ;
+ 
 }
 .time-reactions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
 }
 .time-reactions i {
-  color: #4056A1;
+ color: #4056A1;
 }
 .time-reactions i:hover {
-  color: #473E0F;
-  cursor: pointer;
+ color: #473E0F;
+ cursor: pointer;
 }
 
 
 @media screen and (min-width: 1024px){ 
-  .tweet-layout-cont {
-    padding-top: 250px;
-    padding-left: 40px;
-    padding-right: 40px;
-    display: flex;
-    justify-content: space-between;
-  }
+ .tweet-layout-cont {
+   padding-top: 250px;
+   padding-left: 40px;
+   padding-right: 40px;
+   display: flex;
+   justify-content: space-between;
+ }
 
-  .header-container {
-    min-width: 40%;
+ .header-container {
+   min-width: 40%;
 
-  }
+ }
 }
-/* ////////////////////////// */
-/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-/* 
-Tablet Styles
-@media only screen and (min-width: 768px) {
-  .header {
-    width: 33.3%;
-    line-height: 600px;
-  } */
 
-  /* .twee-content {
-    width: 66.7%;
-    float: left;
-  } */
-
-  /* .tweet-footer {
-    clear: right;
-  } */
-/* } */

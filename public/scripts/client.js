@@ -28,23 +28,28 @@ $(document).ready(function() {
     // check the empty or too long tweet
     // we used .hide and .show for deal with the error message
     const $inputText = $('#tweet-text').val();
+    const maxChar = 140;
     if ($inputText === null || $inputText === '') {
       $( "#error" ).hide();
       $( "#error1" ).show();
-    } else if ($inputText.length > 140) {
+    } else if ($inputText.length > maxChar) {
+      $(".tweet-counter").val(maxChar).removeClass("counter-black").addClass('counter-red');
       $( "#error1" ).hide();
       $( "#error" ).show();
     } else {
+      $(".tweet-counter").val(maxChar).removeClass("counter-red").addClass('counter-black');
       $( "#error1" ).hide();
       $( "#error" ).hide();
       // serialize the tweets
       $.post("/tweets", $form.serialize())
         .done(function(data) {
+          $('#tweets-container').empty();
           loadTweets();
-           
         });
     }
   });
 
 });
+
+
 

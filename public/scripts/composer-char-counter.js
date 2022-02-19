@@ -4,9 +4,10 @@ $(document).ready(function() {
     let tweetLength= i.target.value.length;
     $('.tweet-counter').text(140 - tweetLength);
     if (tweetLength > 140) {
-      $('.tweet-counter').css('color', 'red');
+
+      $('.tweet-counter').removeClass("counter-black").addClass('counter-red');
     } else {
-      $('.tweet-counter').css('color', 'black');
+      $('.tweet-counter').removeClass("counter-red").addClass('counter-black');
     }
   })
 });
