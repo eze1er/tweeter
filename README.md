@@ -18,7 +18,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Body-parser 1.15.2
 - Chance 1.0.2
 - Md5 2.1.0
-- Timeago 4.0.2
+- Timeago.js 4.0.2
 - Nodemon 1.9.2
 - Node 5.10.x or above
 
