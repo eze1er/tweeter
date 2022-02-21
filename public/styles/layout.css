@@ -11,10 +11,12 @@
 *:after {
   box-sizing: inherit;
 }
+
 .icons:hover {
   color: orange;
   /* background-color: orange; */
 }
+
 /*
  * Global layout stuff
  */

@@ -28,6 +28,7 @@
 .counter {
   color: blue;
 }
+
 .tweet-foot {
   display: flex;
   justify-content: space-between;

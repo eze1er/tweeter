@@ -1,8 +1,8 @@
-
 .new-tweet h2 {
   margin-left: 1em;
   color: black;
 }
+
 @media screen and (max-width: 1023px) { 
  .new-tweet {
    margin-top: 99px;
@@ -38,6 +38,7 @@
 .counter-red {
   color: red;
 }
+
 .counter-black {
   color: black;
 }
@@ -63,6 +64,7 @@
  margin-right: 0.5em;
  margin-bottom: 1em;
 }
+
 .tweetId {
  display: flex;
  justify-content: space-between;
@@ -85,6 +87,7 @@
 .blinking{
  animation:blinkingText 1.2s infinite;
 }
+
 @keyframes blinkingText{
  0%{     color: orange;    }
  49%{    color: orangered; }
@@ -119,16 +122,19 @@
  margin: 2rem 0;
  padding: 0rem 1rem;
 }
+
 .image-username {
  display: flex;
  align-items: center;
  justify-content: center;
 }
+
 .image-username img {
  height: 4rem;
  width: 4rem;
  margin-right: 1rem;
 }
+
 .tweet-content {
  margin: 4rem 0 0 0;
  padding: 0 0 1rem 0;
@@ -145,14 +151,15 @@
  align-items: center;
  justify-content: space-between;
 }
+
 .time-reactions i {
  color: #4056A1;
 }
+
 .time-reactions i:hover {
  color: orange;
  cursor: pointer;
 }
-
 
 @media screen and (min-width: 1024px){ 
  .main-container {
