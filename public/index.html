@@ -56,7 +56,7 @@
       </header>
     </div>
     <div class="main-container">
-      <main class="container">
+      <main>
         <section class="new-tweet">
           <!-- <h2>Compose Tweet</h2> -->
       
@@ -68,12 +68,12 @@
           </div>
           <form action="/tweets" method="POST" id="compose-tweet">
             <!-- <label class="new-tweet-text" for="tweet-text"><b>What are you humming about?</b></label> -->
-            <textarea name="text" id="tweet-text" placeholder="What are you humming about?" onfocus=this.value=''></textarea>
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
             <div class="bottom-border"></div>
               <footer class="tweet-foot">
                 <button type="submit" class="tweet-submit">Tweet</button>
                 <output
-                 name="counter" class="tweet-counter" for="tweet-text"></output>
+                 name="counter" class="tweet-counter" for="tweet-text">140</output>
               </footer>
           </form>
         </section>

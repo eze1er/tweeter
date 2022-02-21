@@ -45,6 +45,8 @@ $(document).ready(function() {
         .done(function(data) {
           $('#tweets-container').empty();
           loadTweets();
+          $('textarea').val('');
+          
         });
     }
   });

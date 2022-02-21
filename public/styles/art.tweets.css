@@ -149,13 +149,16 @@
  color: #4056A1;
 }
 .time-reactions i:hover {
- color: #473E0F;
+ color: orange;
  cursor: pointer;
 }
 
 
 @media screen and (min-width: 1024px){ 
- .tweet-layout-cont {
+ .main-container {
+   width: 50%;
+ }
+  .tweet-layout-cont {
    padding-top: 250px;
    padding-left: 40px;
    padding-right: 40px;
